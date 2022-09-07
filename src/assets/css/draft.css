@@ -1,0 +1,159 @@
+:root {
+    --serif-font: "Hanuman", serif;
+    --light-color: #fcf9fa;
+    --dark-color: #e5e5e5;
+    --box-shadow: 0px 4px 4px rgba(48, 42, 42, 0.2);
+    --blue-color: #1a73e8;
+    --active-btn: rgba(26, 115, 232, 0.1);
+    --radius: 50px;
+    --padding: 20px 50px;
+    --dark-text-color: #13293d;
+    --dim-text: rgba(19, 19, 19, 0.4);
+    --dim-color: rgba(19, 19, 19, 0.5);
+    --dim-btn: rgba(26, 115, 232, 0.1);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 30px;
+    margin: 0;
+    background-color: var(--dark-color);
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+  }
+  
+  a.active-menu {
+    color: var(--blue-color);
+    background-color: var(--active-btn);
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  
+  .nav {
+    position: absolute;
+    right: 30px;
+    width: 50%;
+  }
+  
+  .nav img,
+  .logo > img {
+    margin-right: 10px;
+  }
+  
+  .nav div > *:not(.search) {
+    float: right;
+    vertical-align: middle;
+  }
+  
+  .nav::before,
+  .nav::after,
+  .logo::before,
+  .logo::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .search {
+    /* display: inline; */
+    background-color: var(--dark-color);
+    outline: none;
+    border: 1px solid var(--dark-text-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: var(--dark-text-color);
+    background-image: url(img/black-lens.png);
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  ::placeholder {
+    color: var(--dark-text-color);
+    opacity: 1;
+  }
+  
+  .logo > * {
+    text-decoration: none;
+    float: left;
+  }
+  
+  .logo {
+    margin-bottom: 30px;
+  }
+  
+  
+  
+  .dark-text {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--dark-text-color);
+  }
+  
+  .menu > a {
+    display: block;
+    width: max-content;
+    margin-bottom: 20px;
+  }
+  
+  .link {
+    text-decoration: none;
+  }
+  
+  .sidebar > * {
+    display: block;
+    width: fit-content;
+  }
+  
+  div.menu > .blue-btn {
+    background-color: var(--blue-color);
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 15px;
+  }
+  
+  .main {
+    background-color: var(--light-color);
+    position: absolute;
+    top: 13%;
+    left: 20%;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+  }
+
+.dim-text {
+    color: var(--dim-text);
+}
+
+@media (max-width: 770px) {
+    .sidebar {
+      display: none;
+    }
+  
+    .main {
+      left: 0;
+      bottom: 0;
+      /* height: fit-content; */
+    }
+  
+    .nav {
+      width: 80%;
+    }
+}
+  
+@media (max-width: 430px) {
+    .search {
+        display: none;
+    }
+}

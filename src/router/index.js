@@ -1,25 +1,59 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import BlogView from "../views/BlogView.vue";
+import BlogDetailsView from "../views/BlogDetailsView.vue";
+import LoginView from "../views/LoginView.vue";
+import DashboardView from "../views/admin/DashboardView";
+import ViewBlogView from "../views/admin/ViewBlogView";
+import BlogDraft from "../views/admin/DraftView";
+import AddBlogView from "../views/admin/AddBlogView";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/blog",
+    name: "blog",
+    component: BlogView,
+  },
+  {
+    path: "/blog/:id",
+    name: "blogDetails",
+    component: BlogDetailsView,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginView,
+  },
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: DashboardView,
+  },
+  {
+    path: "/view-blog",
+    name: "view-blog",
+    component: ViewBlogView,
+  },
+  {
+    path: "/blog-draft",
+    name: "blog-draft",
+    component: BlogDraft,
+  },
+  {
+    path: "/add-blog",
+    name: "add-blog",
+    component: AddBlogView,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
