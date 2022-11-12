@@ -43,127 +43,15 @@
     <div class="main-grid">
       <div class="card card1" v-for="(blog, i) in blogs" :key="i">
         <div class="text-card">
-          <h3>INVERTERS</h3>
+          <!-- <h3>INVERTERS</h3> -->
           <h1>{{ blog.title }}</h1>
-          <p class="card-p">{{ blog.content.slice(0, 150) }}...</p>
+          <p class="card-p" v-html="blog.content.slice(0, 150) + '...'"></p>
 
           <router-link :to="'/blog/' + blog._id" class="btn card-btn"
             >read here <span class="unicode">&raquo;</span></router-link
           >
         </div>
       </div>
-
-      <!-- <div class="card card2">
-        <div class="text-card">
-          <h3>ADVISORY</h3>
-          <h1>Writing a Language-Agnostic Integration Test Suite</h1>
-          <p class="card-p">
-            The Internet evolved gradually over years, transitioning from the
-            passive to the interactive experience. The fixed, document-based Web
-            has advanced into an interactive...
-          </p>
-
-          <router-link to="/blog/1" class="btn card-btn"
-            >read here <span class="unicode">&raquo;</span></router-link
-          >
-        </div>
-      </div>
-
-      <div class="card card3">
-        <div class="text-card">
-          <h3>INVERTERS</h3>
-          <h1>Writing a Language-Agnostic Integration Test Suite</h1>
-          <p class="card-p">
-            The Internet evolved gradually over years, transitioning from the
-            passive to the interactive experience. The fixed, document-based Web
-            has advanced into an interactive...
-          </p>
-
-          <router-link to="/blog/1" class="btn card-btn"
-            >read here <span class="unicode">&raquo;</span></router-link
-          >
-        </div>
-      </div>
-
-      <div class="card card4">
-        <div class="text-card">
-          <h3>ENGINEERING</h3>
-          <h1>Writing a Language-Agnostic Integration Test Suite</h1>
-          <p class="card-p">
-            The Internet evolved gradually over years, transitioning from the
-            passive to the interactive experience. The fixed, document-based Web
-            has advanced into an interactive...
-          </p>
-
-          <router-link to="/blog/1" class="btn card-btn"
-            >read here <span class="unicode">&raquo;</span></router-link
-          >
-        </div>
-      </div>
-
-      <div class="card card5">
-        <div class="text-card">
-          <h3>SECURITY CAMS</h3>
-          <h1>Web 2.0, Web 3.0: What are the differences?</h1>
-          <p class="card-p">
-            The Internet evolved gradually over years, transitioning from the
-            passive to the interactive experience. The fixed, document-based Web
-            has advanced into an interactive...
-          </p>
-
-          <router-link to="/blog/1" class="btn card-btn"
-            >read here <span class="unicode">&raquo;</span></router-link
-          >
-        </div>
-      </div>
-
-      <div class="card card6">
-        <div class="text-card">
-          <h3>ENGINEERING</h3>
-          <h1>Writing a Language-Agnostic Integration Test Suite</h1>
-          <p class="card-p">
-            The Internet evolved gradually over years, transitioning from the
-            passive to the interactive experience. The fixed, document-based Web
-            has advanced into an interactive...
-          </p>
-
-          <router-link to="/blog/1" class="btn card-btn"
-            >read here <span class="unicode">&raquo;</span></router-link
-          >
-        </div>
-      </div>
-
-      <div class="card card7">
-        <div class="text-card">
-          <h3>SECURITY CAMS</h3>
-          <h1>Web 2.0, Web 3.0: What are the differences?</h1>
-          <p class="card-p">
-            The Internet evolved gradually over years, transitioning from the
-            passive to the interactive experience. The fixed, document-based Web
-            has advanced into an interactive...
-          </p>
-
-          <router-link to="/blog/1" class="btn card-btn"
-            >read here <span class="unicode">&raquo;</span></router-link
-          >
-        </div>
-      </div>
-
-      <div class="card card8">
-        <div class="text-card">
-          <h3>ADVISORY</h3>
-          <h1>Writing a Language-Agnostic Integration Test Suite</h1>
-          <p class="card-p">
-            The Internet evolved gradually over years, transitioning from the
-            passive to the interactive experience. The fixed, document-based Web
-            has advanced into an interactive...
-          </p>
-
-          <router-link to="/blog/1" class="btn card-btn"
-            >read here <span class="unicode">&raquo;</span></router-link
-          >
-        </div>
-      </div> -->
     </div>
   </main>
 
@@ -223,9 +111,9 @@ export default {
     const store = useStore();
     const blogs = ref(null);
     onMounted(async () => {
-      store.dispatch("getBlogs");
-      blogs.value = store.state.blogs;
-      console.log("new", blogs.value);
+      await store.dispatch("getBlogs");
+      blogs.value = await store.state.blogs;
+      //console.log("new", blogs.value);
     });
 
     return { blogs };

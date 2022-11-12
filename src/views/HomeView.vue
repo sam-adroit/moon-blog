@@ -1,46 +1,48 @@
 <template>
   <header>
     <div class="header">
-      <nav class="head-nav">
-        <a href="#" class="logo">
-          <img src="@/assets/img/light-logo.png" alt="moon innovation logo" />
-        </a>
-        <a href="index.html">Home</a>
-        <a href="#">About Us</a>
-        <router-link to="/blog" class="">Blog</router-link>
-        <a href="#">Our Partners</a>
-        <a href="#">Our Team</a>
-        <a href="#">Contact Us </a>
-        <a href="#" class="btn blue-btn">SUBSCRIBE</a>
-      </nav>
-      <div class="head-grid">
-        <div>
-          <h1 class="hanuman">Smart Inverters and Security</h1>
-          <p class="head-intro">
-            An innovation that leverages on artificial intelligence in providing
-            smart inverters, security cameras and management services in the
-            most affordable rate for everyone
-          </p>
-          <a class="btn blue-btn" href="#">VIEW PRODUCTS</a>
-        </div>
-        <div>
-          <input type="search" class="search" placeholder="SEARCH" />
+      <div class="container">
+        <nav>
+          <router-link to="#" class="logo">
+            <img src="@/assets/img/light-logo.png" alt="our logo" />
+            &nbsp;&nbsp;
+            <h3 class="white-head moon">MOON INNOVATIONS</h3>
+          </router-link>
 
-          <div class="picture-grid">
-            <div class="black-picture-background">
-              <img src="@/assets/img/card-pic1.jpg" alt="" />
-            </div>
+          <div class="links">
+            <router-link to="#">Home</router-link>
+            <router-link to="#">About Us</router-link>
+            <router-link to="/blog">Blog</router-link>
+            <router-link to="#">Our Partrners</router-link>
+            <router-link to="#">Our Team</router-link>
+            <router-link to="#">Contact Us</router-link>
+          </div>
 
-            <div class="blue-picture-background span2">
-              <img src="@/assets/img/card-pic2.png" alt="" />
-            </div>
+          <div>
+            <router-link class="sub-btn white-head" to="#"
+              >SUBSCRIBE</router-link
+            >
+          </div>
+        </nav>
 
-            <div class="black-picture-background span2">
-              <img src="@/assets/img/card-pic3.png" alt="" />
-            </div>
-
-            <div class="black-picture-background">
-              <img src="@/assets/img/card-pic3.png" alt="" />
+        <div class="header-body">
+          <div>
+            <h1 class="hanuman">Solar Smart Inverters and Security</h1>
+            <p class="head-p">
+              Our goal is to provide smart and sustainable solutions for
+              Africa's growing energy demand using solar and artificial
+              intelligence technology
+            </p>
+            <router-link to="#" class="head-btn">VIEW OUR PRODUCTS</router-link>
+          </div>
+          <div>
+            <div class="certified">
+              <div class="cert-icon">
+                <img src="@/assets/img/cert.png" alt="certified icon" />
+              </div>
+              <p class="head-p">
+                World class Engineering team sustaning the ecosystem
+              </p>
             </div>
           </div>
         </div>
@@ -49,207 +51,255 @@
   </header>
 
   <main>
-    <div class="main-grid">
-      <div class="center-grid">
-        <h2 class="center-description">HOW WE CAN HELP YOU</h2>
-      </div>
+    <div class="container">
+      <h2 class="headings">WHAT WE DO</h2>
 
-      <div class="help-grid">
-        <div class="help-display">
-          <div class="cards">
-            <div class="circle-grid">
-              <div class="circle circle1">1</div>
-            </div>
-            <div>
-              <h2 class="cards-header">Smart Inverter</h2>
-              <p class="circle-paragraph">
-                Our smart inverters provide sustainable energy management
-                directly to Africa homes. using IoT technology to a connected
-                world.
-              </p>
-              <a href="#" class="cards-btn">Get Inverter</a>
-            </div>
-          </div>
+      <div class="col">
+        <div class="left">
           <div>
-            <img src="@/assets/img/inverter.png" alt="" />
+            <div class="blue-list-circle"></div>
+          </div>
+
+          <div class="wordings">
+            <h2 class="dark-head">Solar Smart Inverter</h2>
+            <p class="prelude">Our smart inverters provides</p>
+            <ul class="word-list">
+              <li>Sustainable energy management</li>
+              <li>Wireless internet accessibility direct to your home</li>
+            </ul>
           </div>
         </div>
 
-        <div class="help-display">
+        <div class="image">
+          <img src="@/assets/img/inverter.png" alt="our inverter" />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="left">
           <div>
-            <img src="@/assets/img/cam.png" alt="" />
+            <div class="green-list-circle"></div>
           </div>
-          <div class="cards">
-            <div class="circle-grid">
-              <div class="circle circle2">2</div>
-            </div>
-            <div>
-              <h2 class="cards-header">Security Camera</h2>
-              <p class="circle-paragraph">
-                Our security camera provides security, and automation through
-                Artificial Intelligence and edge computing adapted to run facial
-                recognition & speech recognition.
-              </p>
-              <a href="#" class="cards-btn">Get Camera</a>
-            </div>
+
+          <div class="wordings">
+            <h2 class="dark-head">Security Surveillance</h2>
+            <p class="prelude">
+              Our Security Surveillance are specially built to:
+            </p>
+            <ul class="word-list">
+              <li>
+                Monitor your home and business 24 hours a day, seven days a
+                week, using a cutting-edge facial and person recognition
+                algorithm.
+              </li>
+              <li>
+                Provide multiple-viewing option through our mobile application.
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div class="help-display">
-          <div class="cards">
-            <div class="circle-grid">
-              <div class="circle circle3">3</div>
-            </div>
-            <div>
-              <h2 class="cards-header">Consultation</h2>
-              <p class="circle-paragraph">
-                Our security camera provides security, and automation through
-                Artificial Intelligence and edge computing adapted to run facial
-              </p>
-              <a href="#" class="cards-btn">Hire Us</a>
-            </div>
-          </div>
-          <div class="two-picture">
-            <div>
-              <img src="@/assets/img/consultation.png" alt="" />
-            </div>
-
-            <img src="@/assets/img/consult.png" alt="" />
-          </div>
-        </div>
-      </div>
-      <!-- </div> -->
-
-      <div class="center-grid">
-        <h2 class="center-description">ABOUT US</h2>
-        <div class="display about">
-          <div class="cartoon">
-            <img src="@/assets/img/group.svg" alt="group of male and female" />
-          </div>
-          <div class="list">
-            <div class="list-card light-list">
-              <div></div>
-              <p class="list-p light-list-p">
-                Moon Innovations is about accelerating smart and sustainable
-                living using solar and AI.
-              </p>
-            </div>
-
-            <div class="list-card green-list">
-              <div></div>
-              <p class="list-p">
-                Moon Innovations is about accelerating smart and sustainable
-                living using solar and AI.
-              </p>
-            </div>
-
-            <div class="list-card blue-list">
-              <div></div>
-              <p class="list-p">
-                Moon Innovations is about accelerating smart and sustainable
-                living using solar and AI.
-              </p>
-            </div>
-          </div>
+        <div class="image">
+          <img src="@/assets/img/cam.png" alt="our security camera" />
         </div>
       </div>
 
-      <div class="center-grid">
-        <h2 class="center-description">THE MOON APP</h2>
-        <div class="display about">
-          <div class="app-box box">
-            <div class="screenshot">
-              <img src="@/assets/img/card1.png" alt="screenshot 1" />
-              <img src="@/assets/img/card2.png" alt="screenshot 1" />
-              <img src="@/assets/img/card3.png" alt="screenshot 1" />
-              <img src="@/assets/img/card4.png" alt="screenshot 1" />
-              <img src="@/assets/img/card5.png" alt="screenshot 1" />
-            </div>
+      <div class="col">
+        <div class="left">
+          <div>
+            <div class="yellow-list-circle"></div>
+          </div>
 
-            <div>
-              <p class="cards-paragraph">
-                The Moon app helps you monitor and control your smart inverter
-                and security camera, through simplified interactions and overly
-                best user experience integrated into the mobile app.
-              </p>
-            </div>
-            <div>
-              <a href="#" class="btn blue-btn">DOWNLOAD APP</a>
-            </div>
+          <div class="wordings">
+            <h2 class="dark-head">Artificial Intelligence</h2>
+            <p class="prelude">
+              Our products are built on Artificial Intelligence
+            </p>
+            <ul class="word-list">
+              <li>
+                We employ artificial intelligence through the Internet of Things
+                (AIOT) via our edge-cloud technology
+              </li>
+              <li>
+                We provide a wealth of applications for our customers' needs
+                through a seamless deployment of architecture - energy
+                management, retail, farming and health.
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <div class="center-grid">
-        <h2 class="center-description">WHAT OUR CLIENTS SAY</h2>
-        <div class="display about">
-          <div class="center">
-            <div>
-              <h2 class="cards-header">
-                “Long battery life, higher power capacity and durability”
-              </h2>
-            </div>
-            <div>
-              <p class="cards-paragraph">
-                An innovation that leverages on artificial intelligence in
-                providing smart inverters, security cameras and management
-                services in the most affordable rate for everyone
-              </p>
-            </div>
-            <div>
-              <img
-                src="@/assets/img/avatar.png"
-                alt="avatar of CEO"
-                class="avatar"
-              />
-              <p class="cards-header ceo-desc">CEO, ACME INC</p>
-              <div class="pointer">
-                <div class="active-pointer"></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </div>
+        <div class="image">
+          <img src="@/assets/img/intelligence.png" alt="our security camera" />
         </div>
       </div>
+    </div>
 
-      <div class="center-grid">
-        <h2 class="center-description">OUR PARTNERS</h2>
+    <div class="container">
+      <h2 class="headings">About us</h2>
 
-        <p class="partner-p">Meet our prestigious partners</p>
+      <div class="about">
+        <div style="position: relative">
+          <div class="svg"><img src="@/assets/img/svg1.png" /></div>
+          <img src="@/assets/img/ceo-inv.png" alt="the c.e.o" />
+        </div>
+        <div>
+          <ul>
+            <li>
+              Moon Innovations is committed to providing a connected and
+              sustainable future for Africa. We leverage cutting-edge
+              technologies like solar, artificial intelligence, edge and cloud
+              computing, leading the future of AIOT.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              Moon Innovations mission is to provide affordable, smart, and
+              sustainable solutions, for low-mid income homes and businesses all
+              around the world.
+            </li>
+          </ul>
 
-        <div class="partner-logo">
-          <img src="@/assets/img/pt1.png" alt="partner one" />
-          <img src="@/assets/img/pt2.png" alt="partner two" />
-          <img src="@/assets/img/pt3.png" alt="partner three" />
-          <img src="@/assets/img/pt4.png" alt="partner four" />
-          <img src="@/assets/img/pt5.png" alt="partner five" />
-          <img src="@/assets/img/pt6.png" alt="partner six" />
+          <ul>
+            <li>
+              Our solution is an all-in-one system providing sustainable
+              electricity, internet access and security surveillance.<br /><br />Our
+              system provides cloud storage capacity for security surveillance
+              feeds
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="centre-grid">
-        <h2 class="center-description">OUR TEAM</h2>
-        <div class="team-pics">
-          <div class="team-member">
-            <img src="@/assets/img/team1.png" alt="Team member 1" />
-            <h2>OSUMUNE MICHAEL</h2>
-            <h3>Founder/CEO</h3>
-            <p>icons</p>
+    <div class="app">
+      <h2 class="headings">Moon App</h2>
+
+      <div class="app-showcase">
+        <div class="container case">
+          <div class="screenshots">
+            <img src="@/assets/img/1.png" alt="screenshot of our app" />
+            <img src="@/assets/img/2.png" alt="screenshot of our app" />
+            <img src="@/assets/img/3.png" alt="screenshot of our app" />
+            <img src="@/assets/img/4.png" alt="screenshot of our app" />
+            <img src="@/assets/img/5.png" alt="screenshot of our app" />
           </div>
-          <div class="team-member">
-            <img src="@/assets/img/team2.png" alt="Team member 2" />
-            <h2>FUH-AUSTIN AMBE</h2>
-            <h3>CTO</h3>
-            <p>icons</p>
+          <p class="app-text">
+            Ever heard about smart houses? Moon app has been developed to help
+            you monitor your Smart Inverters, Wi-Fi and Security Cameras.
+          </p>
+          <button class="get-app">
+            <img src="@/assets/img/play.png" alt="get our app" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container testimony">
+      <h2 class="headings">What our clients say</h2>
+
+      <p class="dark-test-p">
+        “Long battery life, higher power capacity and durability”
+      </p>
+      <p class="dim-test-p">
+        An innovation that leverages on artificial intelligence in providing
+        smart inverters, security cameras and management services in the most
+        affordable rate for everyone
+      </p>
+
+      <div class="ceo">
+        <img src="@/assets/img/avatar.png" alt="our client" />
+        <p class="client-name">CEO, ACME INC</p>
+      </div>
+
+      <div class="indicator">
+        <div class="indicator-active"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="partners">
+      <h2 class="headings">Our partners</h2>
+      <h3>Meet our prestigious partners</h3>
+
+      <div class="sponsor">
+        <div class="container sponsors">
+          <img src="@/assets/img/pt1.png" alt="one of our partners" />
+          <img src="@/assets/img/pt2.png" alt="one of our partners" />
+          <img src="@/assets/img/pt3.png" alt="one of our partners" />
+          <img src="@/assets/img/pt4.png" alt="one of our partners" />
+          <img src="@/assets/img/pt5.png" alt="one of our partners" />
+          <img src="@/assets/img/pt6.png" alt="one of our partners" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="headings">Our team</h2>
+      <div class="teams">
+        <div class="team-card">
+          <img src="@/assets/img/ceo.png" alt="a team member" />
+          <div class="desc">
+            <h3>OSUMUNE MICHAEL</h3>
+            <p>Founder/CEO</p>
+            <router-link to="#" style="text-decoration: none">
+              <img src="@/assets/img/tweet.png" alt="twitter icon" />
+            </router-link>
+            &nbsp; &nbsp;
+            <router-link to="#" style="text-decoration: none"
+              ><img src="@/assets/img/link.png" alt="linkdIn icon"
+            /></router-link>
           </div>
-          <div class="team-member">
-            <img src="@/assets/img/team3.png" alt="Team member 3" />
-            <h2>BANKOLE SAMUEL</h2>
-            <h3>Front end Engineer</h3>
-            <p>icons</p>
+        </div>
+
+        <div class="team-card">
+          <img src="@/assets/img/team2.png" alt="a team member" />
+          <div class="desc">
+            <h3>FUH-AUSTIN AMBE</h3>
+            <p>CTO</p>
+            <router-link to="#" style="text-decoration: none"
+              ><img src="@/assets/img/tweet.png" alt="twitter icon"
+            /></router-link>
+            &nbsp; &nbsp;
+            <router-link to="#" style="text-decoration: none"
+              ><img src="@/assets/img/link.png" alt="linkdIn icon"
+            /></router-link>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="@/assets/img/team3.png" alt="a team member" />
+          <div class="desc">
+            <h3>LEO SAMMY</h3>
+            <p>Project Manager</p>
+            <router-link to="#" style="text-decoration: none"
+              ><img src="@/assets/img/tweet.png" alt="twitter icon"
+            /></router-link>
+            &nbsp; &nbsp;
+            <router-link to="#" style="text-decoration: none"
+              ><img src="@/assets/img/link.png" alt="linkdIn icon"
+            /></router-link>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="@/assets/img/team1.png" alt="a team member" />
+          <div class="desc">
+            <h3>BANKOLE SAMUEL</h3>
+            <p>Front-end Engineer</p>
+            <router-link to="#" style="text-decoration: none"
+              ><img src="@/assets/img/tweet.png" alt="twitter icon"
+            /></router-link>
+            &nbsp; &nbsp;
+            <router-link to="#" style="text-decoration: none"
+              ><img src="@/assets/img/link.png" alt="linkdIn icon"
+            /></router-link>
           </div>
         </div>
       </div>
@@ -257,42 +307,54 @@
   </main>
 
   <footer>
-    <div class="floating-card">
-      <div>
-        <h2 class="floating-card-head">Want to consult with us?</h2>
-        <p class="card-p floating-card-text">Send us a message</p>
-      </div>
-      <div class="link">
-        <a href="#" class="btn blue-btn">CHAT WITH US</a>
+    <div class="container chat-container">
+      <div class="chatUs">
+        <div class="question">
+          <h3>Have questions?</h3>
+          <p>Send us a message</p>
+        </div>
+        <div>
+          <router-link to="#" class="chat-btn">CHAT WITH US</router-link>
+        </div>
       </div>
     </div>
+    <div class="container">
+      <div class="footer-nav">
+        <div>
+          <router-link to="#" class="logo footer-logo">
+            <img src="@/assets/img/light-logo.png" alt="our logo" />
+            &nbsp;&nbsp;
+            <h3 class="white-head moon">MOON INNOVATIONS</h3>
+          </router-link>
 
-    <div class="footer-flex">
-      <div class="footer-logo">
-        <img src="@/assets/img/light-logo.png" alt="Moon technology logo" />
-        <h2>Moon Innovations</h2>
-      </div>
-
-      <div>
-        <h6 class="footer-head">Company</h6>
-        <a href="#">About us</a>
-        <a href="#">Showcase</a>
-        <a href="#">Resources</a>
-      </div>
-
-      <div>
-        <h6 class="footer-head">Business</h6>
-        <a href="#">Our Team</a>
-        <a href="#">Clients</a>
-      </div>
-
-      <div>
-        <h6 class="footer-head">Contact Us</h6>
-
-        <div class="contact-us">
-          <p class="contact">Freely get-in-touch with us.</p>
-          <p>+234 (813) 765 6465</p>
-          <a href="#">holla@mooninnovations.io</a>
+          <p class="address">
+            Workstationng, 7 Ibiyinka Olorunbe, Victoria Island 101241, Lagos,
+            Nigeria.
+          </p>
+        </div>
+        <div>
+          <h3 class="nav-desc">Company</h3>
+          <router-link to="#">About Us</router-link> <br />
+          <br />
+          <router-link to="#">Showcase</router-link> <br />
+          <br />
+          <router-link to="#">Resources</router-link>
+        </div>
+        <div>
+          <h3 class="nav-desc">Business</h3>
+          <router-link to="#">Our Team</router-link> <br />
+          <br />
+          <router-link to="#">Clients</router-link>
+        </div>
+        <div>
+          <h3 class="nav-desc">Contact Us</h3>
+          <span>Freely get-in-touch with us.</span> <br />
+          <br />
+          <router-link to="#" class="contact">+234 (813) 765 6465</router-link>
+          <br />
+          <router-link to="#" class="contact"
+            >holla@mooninnovations.io</router-link
+          >
         </div>
       </div>
     </div>

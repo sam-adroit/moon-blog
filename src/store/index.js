@@ -25,7 +25,7 @@ export default createStore({
   },
   actions: {
     async signIn(context, payload) {
-      const res = await fetch(URL + "signin-admin", {
+      const res = await fetch(URL + "signin-agent", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -72,7 +72,7 @@ export default createStore({
       const res = await fetch(URL + "getBlogs");
       if (res.ok) {
         const { data } = await res.json();
-
+        //console.log(data);
         context.commit("setBlogs", data);
       }
     },

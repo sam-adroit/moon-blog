@@ -40,14 +40,16 @@
 
             <div class="message-content">
               <h2 class="dark-p">Content</h2>
-              <textarea
+              <CkEditor @sendContent="ReadVal"></CkEditor>
+
+              <!-- <textarea
                 name="message-box"
                 id="draft-text-area"
                 cols="30"
                 rows="10"
                 class="message-box"
                 v-model="content"
-              ></textarea>
+              ></textarea> -->
             </div>
             <button to="#" class="link publish-btn add-btn">Add Blog</button>
             <!-- <router-link to="#" class="file-btn blue-btn link">SAVE DRAFT</router-link> -->
@@ -195,11 +197,14 @@ import { ref } from "@vue/reactivity";
 import { useStore } from "vuex";
 import { onMounted } from "@vue/runtime-core";
 import { useRouter } from "vue-router";
+import CkEditor from "../../components/CkEditor.vue";
+
 export default {
   name: "ViewBlog",
   components: {
     "side-bar": Sidebar,
     Header,
+    CkEditor,
   },
   setup() {
     const title = ref("");
@@ -229,7 +234,9 @@ export default {
       !store.state.errMsg && router.push("/view-blog");
     };
 
-    return { onFileChange, createBlog, title, content, image, name };
+    const ReadVal = (val) => (content.value = val);
+
+    return { onFileChange, createBlog, title, content, image, name, ReadVal };
   },
 };
 </script>

@@ -3,6 +3,7 @@
     <div class="header">
       <nav class="head-nav">
         <router-link to="#" class="logo">
+          <!-- <img :src="blog?.image_url" alt="moon innovation logo" /> -->
           <img src="@/assets/img/light-logo.png" alt="moon innovation logo" />
         </router-link>
         <router-link to="/">Home</router-link>
@@ -27,11 +28,7 @@
   </nav>
 
   <main>
-    <div class="">
-      <p class="blog-p">
-        {{ blog?.content }}
-      </p>
-    </div>
+    <div v-html="blog?.content"></div>
   </main>
 
   <footer>

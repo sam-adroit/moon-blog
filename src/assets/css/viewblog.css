@@ -210,6 +210,7 @@ hr {
 .edit {
   background: rgba(26, 115, 232, 0.1);
   color: #1a73e8;
+  cursor: pointer;
 }
 
 .publish {
