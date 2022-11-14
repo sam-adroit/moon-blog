@@ -339,11 +339,21 @@
 <script>
 import Sidebar from "../../components/Sidebar.vue";
 import Header from "../../components/Header.vue";
+import { onMounted } from "@vue/runtime-core";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 export default {
   name: "ViewBlog",
   components: {
     "side-bar": Sidebar,
     Header: Header,
+  },
+  setup() {
+    const store = useStore();
+    const router = useRouter();
+    onMounted(() => {
+      !store.state.user && router.push("/login");
+    });
   },
 };
 </script>

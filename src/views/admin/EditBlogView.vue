@@ -11,7 +11,7 @@
           <hr class="horizontal-line new-post-line" />
 
           <form
-            @submit.prevent="createBlog"
+            @submit.prevent="updateBlog"
             class="draft"
             enctype="multipart/form-data"
           >
@@ -38,9 +38,9 @@
             >
             <span v-if="name">Image name: {{ name }}</span>
 
-            <div class="message-content">
+            <div class="message-content" v-if="contents">
               <h2 class="dark-p">Content</h2>
-              <CkEditor @sendContent="ReadVal"></CkEditor>
+              <CkEditor @sendContent="ReadVal" :content="contents"></CkEditor>
 
               <!-- <textarea
                 name="message-box"
@@ -51,17 +51,7 @@
                 v-model="content"
               ></textarea> -->
             </div>
-            <button
-              v-if="!store.state.loading"
-              to="#"
-              class="link publish-btn add-btn"
-            >
-              Add Blog
-            </button>
-            <div v-if="store.state.loading">
-              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-              <span class="sr-only">Loading...</span>
-            </div>
+            <button to="#" class="link publish-btn add-btn">Add Blog</button>
             <!-- <router-link to="#" class="file-btn blue-btn link">SAVE DRAFT</router-link> -->
           </form>
         </div>
@@ -206,7 +196,7 @@ import Header from "@/components/Header.vue";
 import { ref } from "@vue/reactivity";
 import { useStore } from "vuex";
 import { onMounted } from "@vue/runtime-core";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import CkEditor from "../../components/CkEditor.vue";
 
 export default {
@@ -218,45 +208,48 @@ export default {
   },
   setup() {
     const title = ref("");
-    const content = ref("");
+    const contents = ref("");
     const name = ref(null);
     const image = ref(null);
     const store = useStore();
     const router = useRouter();
-
-    onMounted(() => {
-      !store.state.user && router.push("/login");
+    const route = useRoute();
+    const blog = ref(null);
+    onMounted(async () => {
+      await store.dispatch("getBlog", route.params.id);
+      blog.value = store.state.blog;
+      contents.value = blog.value.content;
+      //console.log("ToCK", contents.value);
+      title.value = blog.value.title;
     });
 
     const onFileChange = () => {
       const file = event.target.files[0];
       name.value = file.name;
       image.value = file;
-      // console.log(file);
     };
 
-    const createBlog = async () => {
-      store.commit("setLoading");
-      await store.dispatch("createBlog", {
+    const updateBlog = async () => {
+      await store.dispatch("updateBlog", {
+        id: store.state.blog._id,
         title: title.value,
-        content: content.value,
-        image: image.value,
+        content: contents.value,
       });
-      store.commit("setLoading");
-      !store.state.errMsg && router.push("/view-blog");
+      blog.value = store.state.blog;
+      router.push("/view-blog");
     };
 
-    const ReadVal = (val) => (content.value = val);
+    const ReadVal = (val) => (contents.value = val);
 
     return {
       onFileChange,
-      createBlog,
       title,
-      content,
+      contents,
       image,
       name,
       ReadVal,
-      store,
+      blog,
+      updateBlog,
     };
   },
 };

@@ -91,9 +91,7 @@ export default {
     onMounted(async () => {
       await store.dispatch("getBlog", route.params.id);
       console.log("details", store.state.blog);
-
       blog.value = store.state.blog;
-      console.log("details", blog.value);
     });
 
     return { blog };

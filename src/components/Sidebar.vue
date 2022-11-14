@@ -1,10 +1,10 @@
 <template>
-  <div class="sidebar">
+  <div :class="store.state.sidebar ? 'show-sidebar' : 'sidebar'">
+    <!-- @click="() => store.commit('setSidebar')" -->
     <router-link to="/dashboard" class="menu"
       ><img src="@/assets/img/dashboard-icon.png" alt="" />
       Dashboard</router-link
     >
-
     <router-link to="/view-blog" class="menu active-menu"
       ><img src="@/assets/img/blog-post-icon.png" alt="" /> Blog
       Posts</router-link
@@ -33,19 +33,21 @@
   </div>
 </template>
 <script>
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 
 export default {
   setup() {
     const store = useStore();
+    const show = ref(store.state.sidebar);
     const router = useRouter();
     const handleLogout = () => {
       store.dispatch("logout");
       router.push("/login");
     };
 
-    return { handleLogout };
+    return { handleLogout, show, store };
   },
 };
 </script>

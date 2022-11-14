@@ -42,6 +42,11 @@ nav a {
   text-decoration: none;
 }
 
+.icon-toggle {
+  display: none;
+  font-size: 20px;
+}
+
 main {
   display: flex;
 }
@@ -49,9 +54,13 @@ main {
 div.sidebar {
   background-color: #f0f0f0;
   padding-top: 20px;
-  padding-left: 40px;
+  padding: 20px 30px;
   flex: 15%;
   /* height: 100%; */
+}
+
+div.show-sidebar {
+  display: none;
 }
 
 .menu {
@@ -299,6 +308,37 @@ hr,
 
 @media (max-width: 770px) {
   .search {
+    display: none;
+  }
+  .icon-toggle {
+    display: block;
+  }
+
+  div.sidebar {
+    display: none;
+  }
+
+  main {
+    display: block;
+    position: relative;
+    max-width: 100%;
+  }
+
+  div.show-sidebar {
+    display: block;
+    padding: 20px 20px 60px;
+    position: absolute;
+    background-color: #cdc5c5;
+    /* top: 100px; */
+    z-index: 1;
+  }
+
+  .section {
+    display: block;
+    padding: 20px;
+  }
+
+  .column2 {
     display: none;
   }
 }

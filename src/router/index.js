@@ -7,6 +7,7 @@ import DashboardView from "../views/admin/DashboardView";
 import ViewBlogView from "../views/admin/ViewBlogView";
 import BlogDraft from "../views/admin/DraftView";
 import AddBlogView from "../views/admin/AddBlogView";
+import EditBlogView from "../views/admin/EditBlogView";
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: "/view-blog",
     name: "view-blog",
     component: ViewBlogView,
+  },
+  {
+    path: "/edit-blog/:id",
+    name: "edit-blog",
+    component: EditBlogView,
   },
   {
     path: "/blog-draft",

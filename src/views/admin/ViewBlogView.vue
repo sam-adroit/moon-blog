@@ -55,10 +55,25 @@
                 <router-link to="#" class="add-file">Add File</router-link>
               </div>
             </div>
-            <CkEditor @sendContent="ReadVal" :content="contents"></CkEditor>
-            <!-- <textarea cols="30" rows="10" v-model="content"></textarea> -->
-
-            <button class="save-draft">SAVE DRAFT</button>
+            <div v-if="contents">
+              <CkEditor @sendContent="ReadVal" :content="contents"></CkEditor>
+            </div>
+            <textarea
+              v-else
+              name="message-box"
+              id="draft-text-area"
+              cols="30"
+              rows="10"
+              class="message-box"
+              v-model="content"
+            ></textarea>
+            <button v-if="!store.state.loading" class="save-draft">
+              UPDATE BLOG
+            </button>
+            <div v-if="store.state.loading">
+              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              <span class="sr-only">Loading...</span>
+            </div>
           </form>
         </div>
       </div>
@@ -87,22 +102,30 @@ export default {
     const check = ref("Initial value");
     const store = useStore();
     const router = useRouter();
-
+    onMounted(async () => {
+      !store.state.user && router.push("/login");
+      await store.dispatch("getBlogs");
+      blogs.value = store.state.blogs;
+    });
     const getBlog = async (id) => {
+      //router.push("edit-blog/" + id);
+      contents.value = null;
       await store.dispatch("getBlog", id);
       title.value = store.state.blog.title;
       contents.value = store.state.blog.content;
-      console.log("blog", store.state.blog);
     };
 
     const updateBlog = async () => {
-      console.log(store.state.blog._id);
+      store.commit("setLoading");
       await store.dispatch("updateBlog", {
         id: store.state.blog._id,
         title: title.value,
         content: contents.value,
       });
       blogs.value = store.state.blogs;
+      contents.value = null;
+      title.value = null;
+      store.commit("setLoading");
     };
 
     const deleteBlog = async (id) => {
@@ -114,13 +137,6 @@ export default {
       return blogs.value;
     });
 
-    onMounted(async () => {
-      !store.state.user && router.push("/login");
-      await store.dispatch("getBlogs");
-      blogs.value = store.state.blogs;
-
-      // console.log(blogs.value);
-    });
     const ReadVal = (val) => (contents.value = val);
 
     return {
@@ -132,9 +148,10 @@ export default {
       deleteBlog,
       ReadVal,
       check,
+      store,
     };
   },
 };
 </script>
-=
+
 <style src="@/assets/css/viewblog.css" scoped></style>

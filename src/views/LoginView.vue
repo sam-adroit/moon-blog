@@ -33,6 +33,10 @@
         <button type="submit" class="log-in-btn">Log in</button>
 
         <h2 class="forgot-password"><a href="#">Forgot password?</a></h2>
+        <div v-if="store.state.loading">
+          <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+          <span class="sr-only">Loading...</span>
+        </div>
       </form>
     </div>
   </main>
@@ -55,15 +59,16 @@ export default {
     });
 
     const handleLogin = async () => {
+      store.commit("setLoading");
       await store.dispatch("signIn", {
         email: email.value,
         password: password.value,
       });
-
+      store.commit("setLoading");
       store.state.user && router.push("/dashboard");
     };
 
-    return { email, password, handleLogin };
+    return { email, password, handleLogin, store };
   },
 };
 </script>

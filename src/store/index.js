@@ -8,6 +8,8 @@ export default createStore({
     errMsg: "",
     blogs: null,
     blog: null,
+    sidebar: false,
+    loading: false,
   },
   mutations: {
     setUser(state, payload) {
@@ -21,6 +23,12 @@ export default createStore({
     },
     setBlog(state, payload) {
       state.blog = payload;
+    },
+    setSidebar(state, payload) {
+      state.sidebar = payload;
+    },
+    setLoading(state) {
+      state.loading = !state.loading;
     },
   },
   actions: {
@@ -74,6 +82,7 @@ export default createStore({
         const { data } = await res.json();
         //console.log(data);
         context.commit("setBlogs", data);
+        //console.log("getBlog", this.state.blogs);
       }
     },
     async getBlog(context, payload) {
@@ -103,7 +112,8 @@ export default createStore({
         body: fd,
       });
       if (res.ok) {
-        context.dispatch("getBlogs");
+        await context.dispatch("getBlogs");
+        //console.log("update", this.state.blogs);
       }
     },
     async deleteBlog(context, payload) {
@@ -114,7 +124,7 @@ export default createStore({
         },
       });
       if (res.ok) {
-        context.dispatch("getBlogs");
+        await context.dispatch("getBlogs");
       }
     },
   },
