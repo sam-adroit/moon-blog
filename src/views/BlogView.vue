@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="header">
-      <nav class="head-nav">
+      <!-- <nav class="head-nav">
         <router-link to="#" class="logo">
           <img src="@/assets/img/light-logo.png" alt="moon innovation logo" />
         </router-link>
@@ -11,7 +11,8 @@
         <router-link to="/blog" class="active-head-nav">Blog</router-link>
         <router-link to="#">Contact Us </router-link>
         <router-link to="#" class="btn blue-btn">SUBSCRIBE</router-link>
-      </nav>
+      </nav> -->
+      <Navbar />
       <div class="head-grid">
         <div>
           <h1 class="hanuman">Moon Smart Innovation Blog</h1>
@@ -105,8 +106,12 @@
 <script>
 import { onMounted, ref } from "@vue/runtime-core";
 import { useStore } from "vuex";
+import Navbar from "../components/Navbar.vue";
 export default {
   name: "Blog-view",
+  components: {
+    Navbar,
+  },
   setup() {
     const store = useStore();
     const blogs = ref(null);

@@ -2,7 +2,7 @@
   <header>
     <div class="header">
       <div class="container">
-        <nav>
+        <!-- <nav>
           <router-link to="#" class="logo">
             <img src="@/assets/img/light-logo.png" alt="our logo" />
             &nbsp;&nbsp;
@@ -23,8 +23,8 @@
               >SUBSCRIBE</router-link
             >
           </div>
-        </nav>
-
+        </nav> -->
+        <Navbar />
         <div class="header-body">
           <div>
             <h1 class="hanuman">Solar Smart Inverters and Security</h1>
@@ -144,7 +144,7 @@
           <img src="@/assets/img/ceo-inv.png" alt="the c.e.o" />
         </div>
         <div>
-          <ul>
+          <ul class="aboutUs-details">
             <li>
               Moon Innovations is committed to providing a connected and
               sustainable future for Africa. We leverage cutting-edge
@@ -179,10 +179,26 @@
         <div class="container case">
           <div class="screenshots">
             <img src="@/assets/img/1.png" alt="screenshot of our app" />
-            <img src="@/assets/img/2.png" alt="screenshot of our app" />
-            <img src="@/assets/img/3.png" alt="screenshot of our app" />
-            <img src="@/assets/img/4.png" alt="screenshot of our app" />
-            <img src="@/assets/img/5.png" alt="screenshot of our app" />
+            <img
+              src="@/assets/img/2.png"
+              id="remove-img"
+              alt="screenshot of our app"
+            />
+            <img
+              src="@/assets/img/3.png"
+              id="remove-img"
+              alt="screenshot of our app"
+            />
+            <img
+              src="@/assets/img/4.png"
+              id="remove-img"
+              alt="screenshot of our app"
+            />
+            <img
+              src="@/assets/img/5.png"
+              id="remove-img"
+              alt="screenshot of our app"
+            />
           </div>
           <p class="app-text">
             Ever heard about smart houses? Moon app has been developed to help
@@ -363,9 +379,12 @@
 
 <script>
 // @ is an alias to /src
-
+import Navbar from "../components/Navbar.vue";
 export default {
   name: "HomeView",
+  components: {
+    Navbar,
+  },
 };
 </script>
 <style src="@/assets/css/home.css" scoped></style>

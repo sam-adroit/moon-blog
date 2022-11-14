@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <a href="index.html">
+    <a href="/">
       <img src="@/assets/img//darklogo.png" alt="our logo" />
       <p class="dark-text">MOON INNOVATIONS</p>
     </a>

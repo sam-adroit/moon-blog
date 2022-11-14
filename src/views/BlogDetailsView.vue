@@ -1,9 +1,9 @@
 <template>
   <header>
     <div class="header">
-      <nav class="head-nav">
+      <!-- <nav class="head-nav">
         <router-link to="#" class="logo">
-          <!-- <img :src="blog?.image_url" alt="moon innovation logo" /> -->
+          
           <img src="@/assets/img/light-logo.png" alt="moon innovation logo" />
         </router-link>
         <router-link to="/">Home</router-link>
@@ -12,7 +12,8 @@
         <router-link to="/blog" class="active-head-nav">Blog</router-link>
         <router-link to="#">Contact Us </router-link>
         <router-link to="#" class="btn blue-btn">SUBSCRIBE</router-link>
-      </nav>
+      </nav> -->
+      <Navbar />
       <div class="head-grid">
         <h1 class="hanuman blog-head">{{ blog?.title }}</h1>
       </div>
@@ -82,8 +83,10 @@
 import { onMounted, ref } from "@vue/runtime-core";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
+import Navbar from "../components/Navbar.vue";
 export default {
   name: "blog-details",
+  components: { Navbar },
   setup() {
     const route = useRoute();
     const store = useStore();
